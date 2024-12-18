@@ -1,21 +1,30 @@
 # Priors
 odom_fusion/prior_velocity_sigma: 1.0e-3
-odom_fusion/prior_position_sigma: 1.0e-3
-odom_fusion/prior_rotation_sigma: 1.0e-2
+odom_fusion/prior_position_sigma: 1.0e-5
+odom_fusion/prior_rotation_sigma: 1.0e-5
 # Preintegration
 odom_fusion/accel_noise_sigma: 1.5e-0
 odom_fusion/gyro_noise_sigma: 2.6e-3
 odom_fusion/prior_bias_sigma: 1.0e-3
 odom_fusion/gravity_constant: 9.80511
 # IMU Orientation
-#odom_fusion/rotation_correction: [1, 9.97838e-06,  0.000976073,
-#                      9.97838e-06,     0.999791,   -0.0204438,
-#                      -0.000976073,    0.0204438,     0.999791]
+odom_fusion/rotation_correction:
+  [
+    0.999936,
+    0.005150,
+    0.010097,
+    0.005242,
+    -0.999945,
+    -0.009132,
+    0.010049,
+    0.009184,
+    -0.999907,
+  ]
 odom_fusion/use_imu_rollpitch: False
 odom_fusion/imu_rollpitch_sigma: 3.0e-1
 # Wheel/track odometry
-odom_fusion/velocity_sigma_scale: 1.0e-1
-odom_fusion/velocity_sigma_normalization: 1.0e-2
+odom_fusion/velocity_sigma_scale: 1.0e-5
+odom_fusion/velocity_sigma_normalization: 1.0e-5
 # General
 odom_fusion/propagate_variance: False
 odom_fusion/integration_dt: 0.02

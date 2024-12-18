@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
 <launch>
     <rosparam command="load" file="$(find odom_fusion)/config/drz_telemax.yaml" />
+    <node pkg="rover_nav" type="add_cov.py" name="imu_change"/>
     <node pkg="odom_fusion" type="node" name="odom_fusion_node" output="screen" respawn="false">
         <remap from="odom_fused" to="/odom"/>
-        <remap from="imu/data" to="/imu/xsens/data"/>
-
+        <!-- <remap from="imu/data" to="/imu/xsens/data"/> -->
+        <remap from ="/imu/data" to="/imu_filtered/data_corrected"/>
+        <remap from ="/odom_raw" to="/zlac_driver/wheel_odom"/>
     </node>
 </launch>
 
